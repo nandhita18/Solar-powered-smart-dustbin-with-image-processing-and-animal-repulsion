@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Bin Monitoring</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f8f8f8;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            margin-bottom: 20px;
+        }
+        .bin-status {
+            font-size: 24px;
+            color: #00a99d;
+            font-weight: bold;
+        }
+        .toggle-section {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+        .toggle-box {
+            text-align: center;
+        }
+        .toggle-box label {
+            font-weight: bold;
+            display: block;
+        }
+        .toggle-switch {
+            position: relative;
+            display: inline-block;
+            width: 50px;
+            height: 24px;
+        }
+        .toggle-switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            transition: .4s;
+            border-radius: 24px;
+        }
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 18px;
+            width: 18px;
+            left: 4px;
+            bottom: 3px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+        input:checked + .slider {
+            background-color: #00a99d;
+        }
+        input:checked + .slider:before {
+            transform: translateX(26px);
+        }
+        .map {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>SMART BIN MONITORING</h2>
+        <p>Current Bin Level</p>
+        <div class="bin-status">32%</div>
+        <div class="toggle-section">
+            <div class="toggle-box">
+                <label>Animal Detection</label>
+                <label class="toggle-switch">
+                    <input type="checkbox">
+                    <span class="slider"></span>
+                </label>
+            </div>
+            <div class="toggle-box">
+                <label>Human Detection</label>
+                <label class="toggle-switch">
+                    <input type="checkbox" checked>
+                    <span class="slider"></span>
+                </label>
+            </div>
+        </div>
+        <div class="toggle-section">
+            <div class="toggle-box">
+                <label>Lid</label>
+                <label class="toggle-switch">
+                    <input type="checkbox" checked>
+                    <span class="slider"></span>
+                </label>
+            </div>
+            <div class="toggle-box">
+                <label>Repulsion Buzzer</label>
+                <label class="toggle-switch">
+                    <input type="checkbox">
+                    <span class="slider"></span>
+                </label>
+            </div>
+        </div>
+        <div class="map">
+            <h3>Location of Bin</h3>
+            <iframe src="https://maps.google.com/maps?q=13.032609,80.177871&z=15&output=embed" width="100%" height="300" style="border:0;"></iframe>
+        </div>
+    </div>
+</body>
+</html>
